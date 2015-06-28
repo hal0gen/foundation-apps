@@ -2579,7 +2579,7 @@ angular.module('markdown', [])
           var panelPosition = $window.getComputedStyle(element[0]).getPropertyValue("position");
 
           // patch to prevent panel animation on larger screen devices
-          if (panelPosition !== 'absolute') {
+          if (panelPosition == 'static' || panelPosition == 'relative') {
             return;
           }
 

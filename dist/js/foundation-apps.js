@@ -568,6 +568,9 @@
   DynamicRoutingConfig.$inject = ['$FoundationStateProvider'];
 
   function DynamicRoutingConfig(FoundationStateProvider) {
+    if (typeof foundationRoutes === 'undefined') {
+      var foundationRoutes = [];
+    }
     FoundationStateProvider.registerDynamicRoutes(foundationRoutes);
   }
 

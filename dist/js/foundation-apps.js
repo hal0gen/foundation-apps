@@ -63,7 +63,9 @@
       element.addClass(activeClass);
 
       element.one(events.join(' '), function() {
-        finishAnimation();
+        if(timedOut) {
+          finishAnimation();
+        }
       });
 
       setTimeout(function() {
